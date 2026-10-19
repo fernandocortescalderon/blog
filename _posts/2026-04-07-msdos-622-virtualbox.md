@@ -1,6 +1,6 @@
 ---
 title: "Cómo instalar MS-DOS 6.22 en VirtualBox, paso a paso"
-description: "Instalación de MS-DOS 6.22 desde cero en VirtualBox: la máquina virtual, los disquetes de instalación y el asistente hasta llegar al indicador C:\\>."
+description: "Instalación de MS-DOS 6.22 desde cero en VirtualBox: la máquina virtual, los disquetes de instalación y el asistente hasta llegar al indicador de comandos."
 date: 2026-04-07 09:00:00 -0600
 pillar: soporte
 youtube: hkME2IPI4zs
