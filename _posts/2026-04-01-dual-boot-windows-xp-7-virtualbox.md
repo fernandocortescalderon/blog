@@ -29,15 +29,8 @@ después el más nuevo.
 ## 1. Crear la máquina virtual
 
 Una sola máquina virtual con un solo disco, que se repartirá entre los dos
-sistemas. Estos son los valores que uso en el video:
-
-| Parámetro | Valor |
-|---|---|
-| Memoria RAM | 512 MB |
-| Disco duro | 10 GB |
-
-512 MB alcanzan para el laboratorio, aunque Windows 7 pide oficialmente
-1 GB: con más memoria funcionará con más fluidez.
+sistemas. Dale al disco espacio suficiente para ambos y, como mínimo, la
+memoria que pide Windows 7: 1 GB según los requisitos oficiales de Microsoft.
 
 ## 2. Instalar Windows XP en la primera partición
 
