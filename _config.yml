@@ -1,0 +1,64 @@
+# ---------------------------------------------------------------------------
+# Sitio
+# ---------------------------------------------------------------------------
+title: Blog · Fernando Cortés Calderón
+description: >-
+  Notas de Fernando Cortés Calderón sobre ciberseguridad, soporte técnico
+  y proyectos propios.
+url: https://cortescalderon.com
+baseurl: /blog
+lang: es_MX
+timezone: America/Mexico_City
+
+# Sitio principal (enlace de regreso en el encabezado)
+main_site: https://cortescalderon.com
+
+author:
+  name: Fernando Cortés Calderón
+  url: https://cortescalderon.com
+
+social:
+  name: Fernando Cortés Calderón
+  links:
+    - https://github.com/fernandocortescalderon
+    - https://www.linkedin.com/in/fernandocortesc/
+
+# ---------------------------------------------------------------------------
+# URLs sin fecha: /blog/nombre-del-post/
+# El nombre sale del archivo: _posts/AAAA-MM-DD-nombre-del-post.md
+# ---------------------------------------------------------------------------
+permalink: /:title/
+
+# ---------------------------------------------------------------------------
+# Build
+# ---------------------------------------------------------------------------
+# Sin tema: el layout es propio. GitHub Pages aplica Primer si no se anula.
+theme: null
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle

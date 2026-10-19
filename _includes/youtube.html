@@ -1,0 +1,25 @@
+{%- comment -%}
+  Video de YouTube sin peticiones a Google hasta que el visitante pulsa
+  reproducir. Antes del clic solo se muestra la portada local; al pulsar,
+  assets/js/video.js lo reemplaza por el iframe de youtube-nocookie.com.
+  Sin JavaScript, el enlace abre el video en YouTube.
+
+  Uso:
+    {% include youtube.html id="ID_DEL_VIDEO" %}
+    {% include youtube.html id="ID_DEL_VIDEO" title="Título" cover="/assets/img/posts/portada.jpg" %}
+{%- endcomment -%}
+{%- assign yt_title = include.title | default: "Video" -%}
+<figure class="video">
+  <a class="video-facade" href="https://www.youtube.com/watch?v={{ include.id }}"
+     data-youtube-id="{{ include.id }}" data-youtube-title="{{ yt_title | escape }}">
+    {%- if include.cover %}
+    <img class="video-cover" src="{{ include.cover | relative_url }}" alt="" loading="lazy" decoding="async">
+    {%- else %}
+    <span class="video-cover video-cover-default" aria-hidden="true"><span class="monogram">FC</span></span>
+    {%- endif %}
+    <span class="video-play" aria-hidden="true"></span>
+    <span class="video-label">Reproducir: {{ yt_title | escape }}</span>
+  </a>
+  <figcaption class="video-note">Al reproducir se carga YouTube en modo sin cookies.</figcaption>
+</figure>
+<script src="{{ '/assets/js/video.js' | relative_url }}" defer></script>

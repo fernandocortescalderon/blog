@@ -1,0 +1,13 @@
+{%- assign post = include.post -%}
+<li class="post-card" data-pillar="{{ post.pillar }}">
+  <div class="post-meta">
+    {% include pillar-badge.html pillar=post.pillar %}
+    {% include fecha.html date=post.date %}
+    {%- if post.youtube %}<span class="meta-flag">Video</span>{% endif -%}
+    {%- if post.repo %}<span class="meta-flag">Código</span>{% endif -%}
+  </div>
+  <h2 class="post-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+  {%- if post.description %}
+  <p class="post-card-desc">{{ post.description }}</p>
+  {%- endif %}
+</li>

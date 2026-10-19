@@ -1,0 +1,14 @@
+# Pilares del blog. La clave es el valor que va en `pillar:` del front matter.
+# `tone` se traduce en la clase CSS .tone-<tone> (ver assets/css/main.css).
+ciberseguridad:
+  name: Ciberseguridad
+  tone: emerald
+  description: Seguridad ofensiva y defensiva, laboratorios y certificaciones.
+soporte:
+  name: Soporte
+  tone: gold
+  description: Service desk, diagnóstico y administración de sistemas.
+proyectos:
+  name: Proyectos
+  tone: cream
+  description: Proyectos propios, herramientas y contenido.

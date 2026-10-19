@@ -1,0 +1,8 @@
+{%- comment -%}
+  Etiqueta del pilar. Si el valor no existe en _data/pillars.yml no se muestra.
+  Uso: {% include pillar-badge.html pillar=page.pillar %}
+{%- endcomment -%}
+{%- assign p = site.data.pillars[include.pillar] -%}
+{%- if p -%}
+<span class="pillar tone-{{ p.tone }}">{{ p.name }}</span>
+{%- endif -%}
