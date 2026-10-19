@@ -26,12 +26,8 @@ documento el proceso completo que sigo en el video.
 ## 1. Preparar la máquina virtual
 
 En VirtualBox, **Nueva**, y en tipo de sistema elige **Microsoft Windows →
-Windows 3.1**. Con eso VirtualBox propone valores adecuados para la época.
-
-| Parámetro | Valor |
-|---|---|
-| Memoria RAM | <!-- REVISAR --> |
-| Disco duro | <!-- REVISAR --> |
+Windows 3.1**. Con eso VirtualBox propone valores de memoria y disco
+adecuados para la época; puedes aceptarlos tal cual.
 
 Antes de seguir, la máquina debe arrancar en MS-DOS y mostrar el indicador
 `C:\>`.
