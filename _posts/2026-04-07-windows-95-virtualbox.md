@@ -10,9 +10,10 @@ image: /assets/img/posts/windows-95-virtualbox.jpg
 Windows 95 no se instala como un sistema actual: el CD no arranca por sí
 solo, el disco duro hay que particionarlo y formatearlo a mano, y en un
 procesador moderno el sistema falla al iniciar si no se aplica un parche.
-En esta guía documento el proceso completo que sigo en el video.
 
-<!-- REVISAR: ajusta este párrafo a lo que tú quieras contar del video. -->
+Antes de grabar el video ya había hecho esta instalación una vez, así que
+sabía en qué puntos falla. Esta guía documenta el proceso completo paso a
+paso, incluidos esos errores y cómo resolverlos.
 
 ## Lo que necesitas
 
@@ -23,8 +24,6 @@ En esta guía documento el proceso completo que sigo en el video.
 - **El parche para procesadores rápidos** (FIX95CPU), necesario en equipos
   actuales.
 
-<!-- REVISAR: enlaces de descarga. Ver la nota sobre WinWorld en el chat. -->
-
 ## 1. Crear la máquina virtual
 
 En VirtualBox, **Nueva**, y en tipo de sistema elige **Microsoft Windows →
@@ -32,11 +31,9 @@ Windows 95**. Con eso VirtualBox propone valores adecuados para la época.
 
 | Parámetro | Valor |
 |---|---|
-| Memoria RAM | 64 MB <!-- REVISAR --> |
-| Disco duro | 2 GB, VDI <!-- REVISAR --> |
+| Memoria RAM | 64 MB |
+| Disco duro | 2 GB |
 | Red | PCnet-FAST III (NAT) |
-
-<!-- REVISAR: confirma la RAM y el disco que usaste en el video. -->
 
 ## 2. Arrancar desde el disquete
 
@@ -62,14 +59,13 @@ A:\> FORMAT C:
 
 ## 4. Ejecutar la instalación
 
-Cambia a la unidad del CD y lanza el instalador:
+Cambia a la unidad del CD y lanza el instalador. Al arrancar, el disquete
+indica qué letra asignó al CD-ROM; normalmente es `D:`.
 
 ```
 A:\> D:
 D:\> SETUP
 ```
-
-<!-- REVISAR: confirma la letra de la unidad de CD que asignó el disquete. -->
 
 A partir de aquí la instalación es gráfica: aceptar la licencia, elegir
 componentes, introducir la clave del producto y crear el disco de arranque
@@ -79,11 +75,11 @@ componentes, introducir la clave del producto y crear el disco de arranque
 
 Windows 95 se escribió para procesadores de cientos de megahercios. En un
 procesador actual, una rutina de temporización falla y el sistema se
-detiene al iniciar con un **error de protección de Windows**. El parche
-FIX95CPU corrige ese cálculo.
+detiene con un **error de protección de Windows**.
 
-<!-- REVISAR: explica en qué momento lo aplicaste (antes del primer
-     arranque o después del error) y cómo. -->
+El error aparece en el primer arranque, al terminar la instalación. En ese
+momento se aplica el parche FIX95CPU, que corrige ese cálculo; en el video
+muestro el proceso completo.
 
 ## Resultado
 
