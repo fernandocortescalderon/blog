@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- Miniatura de YouTube y portada del post: 1280 × 720.
-     Parámetros: ?title=...&pillar=ciberseguridad|soporte|proyectos&kicker=texto opcional -->
+     Parámetros: ?title=...&pillar=ciberseguridad|soporte|proyectos&kicker=texto opcional&img=captura opcional -->
 <html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
 body { width: 1280px; height: 720px; position: relative; padding: 76px 96px;
   display: flex; flex-direction: column;
@@ -13,11 +13,20 @@ body::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width
 .main { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 .kicker { font-size: 28px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 22px; }
 .title { font-family: var(--serif); font-weight: 600; line-height: 1.06; letter-spacing: -0.01em; font-size: 104px; max-width: 1060px; }
+.main.with-shot { flex-direction: row; align-items: center; gap: 56px; }
+.with-shot .text { flex: 1; min-width: 0; }
+.with-shot .title { font-size: 84px; }
+.shot { width: 520px; flex-shrink: 0; border: 2px solid var(--line); border-radius: 10px; overflow: hidden;
+  background: var(--panel); box-shadow: 0 30px 60px -20px rgba(0,0,0,0.75), 0 0 0 1px rgba(201,162,75,0.08); }
+.shot-bar { height: 34px; display: flex; align-items: center; gap: 9px; padding: 0 14px; border-bottom: 2px solid var(--line); }
+.shot-bar i { width: 11px; height: 11px; border-radius: 50%; background: var(--line); }
+.shot-bar i:first-child { background: var(--tone); }
+.shot img { display: block; width: 100%; height: auto; }
 .foot { font-size: 24px; letter-spacing: 0.06em; color: var(--text-muted); }
 .foot b { color: var(--accent); font-weight: 500; }
 </style></head><body>
 <div class="top"><span class="pillar" id="pillar"></span><div class="monogram">FC</div></div>
-<div class="main"><div class="kicker" id="kicker" hidden></div><div class="title" id="title"></div></div>
+<div class="main" id="main"><div class="text"><div class="kicker" id="kicker" hidden></div><div class="title" id="title"></div></div></div>
 <div class="foot"><b>cortescalderon.com</b>/blog</div>
 <script>
   const P = { ciberseguridad: ['Ciberseguridad', 'emerald'], soporte: ['Soporte', 'gold'], proyectos: ['Proyectos', 'cream'] };
@@ -28,11 +37,17 @@ body::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width
   const t = document.getElementById('title');
   t.textContent = q.get('title') || 'Título del video';
   if (q.get('kicker')) { const k = document.getElementById('kicker'); k.textContent = q.get('kicker'); k.hidden = false; }
+  if (q.get('img')) {
+    const m = document.getElementById('main');
+    m.classList.add('with-shot');
+    m.insertAdjacentHTML('beforeend', '<div class="shot"><div class="shot-bar"><i></i><i></i><i></i></div><img alt=""></div>');
+    m.querySelector('.shot img').src = q.get('img');
+  }
   // Ajusta el tamaño para que el título quepa en un máximo de 3 líneas.
   document.fonts.ready.then(() => {
-    let size = 104;
+    let size = parseFloat(getComputedStyle(t).fontSize);
     while (size > 56 && t.getBoundingClientRect().height > size * 1.06 * 3 + 2) { size -= 4; t.style.fontSize = size + 'px'; }
-    document.body.dataset.ready = '1';
+    Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; }))).then(() => { document.body.dataset.ready = '1'; });
   });
 </script>
 </body></html>

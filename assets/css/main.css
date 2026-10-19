@@ -345,6 +345,11 @@ main { animation-delay: 0.12s; }
   background: linear-gradient(transparent, rgba(18, 18, 18, 0.9));
 }
 
+/* Con portada propia (miniatura con texto), el botón va a la esquina para no taparla. */
+.video-has-cover .video-cover { opacity: 1; }
+.video-has-cover .video-play { top: auto; left: auto; right: 18px; bottom: 18px; transform: none; width: 60px; height: 60px; }
+.video-has-cover .video-label { clip-path: inset(50%); width: 1px; height: 1px; overflow: hidden; padding: 0; white-space: nowrap; }
+
 .video-note {
   font-size: 0.68rem;
   letter-spacing: 0.04em;
@@ -513,6 +518,8 @@ main { animation-delay: 0.12s; }
   .post-card { padding: 1.2rem 1.1rem; }
   .post-card-title { font-size: 1.15rem; }
   .video-play { width: 60px; height: 60px; }
+  .video-has-cover .video-play { width: 38px; height: 38px; right: 8px; bottom: 8px; }
+  .video-has-cover .video-play::after { border-width: 7px 0 7px 12px; }
   /* En pantallas chicas la etiqueta taparía la portada: se mantiene solo para lectores de pantalla. */
   .video-label { clip-path: inset(50%); width: 1px; height: 1px; overflow: hidden; padding: 0; white-space: nowrap; }
   .post-nav { grid-template-columns: 1fr; }

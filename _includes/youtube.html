@@ -10,7 +10,7 @@
 {%- endcomment -%}
 {%- assign yt_title = include.title | default: "Video" -%}
 <figure class="video">
-  <a class="video-facade" href="https://www.youtube.com/watch?v={{ include.id }}"
+  <a class="video-facade{% if include.cover %} video-has-cover{% endif %}" href="https://www.youtube.com/watch?v={{ include.id }}"
      data-youtube-id="{{ include.id }}" data-youtube-title="{{ yt_title | escape }}">
     {%- if include.cover %}
     <img class="video-cover" src="{{ include.cover | relative_url }}" alt="" loading="lazy" decoding="async">
