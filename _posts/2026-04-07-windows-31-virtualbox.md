@@ -1,7 +1,7 @@
 ---
 title: "Cómo instalar Windows 3.1 en VirtualBox, paso a paso"
 description: "Instalación de Windows 3.1 desde cero en VirtualBox: la máquina virtual, MS-DOS como base y el asistente de instalación hasta llegar al Program Manager."
-date: 2026-04-07 11:00:00 -0600
+date: 2026-04-07 10:00:00 -0600
 pillar: soporte
 youtube: Q82cwAiqz9Y
 image: /assets/img/posts/windows-31-virtualbox.jpg
@@ -16,7 +16,8 @@ documento el proceso completo que sigo en el video.
 
 - **VirtualBox** instalado.
 - **MS-DOS instalado en la máquina virtual.** Windows 3.1 se instala y se
-  ejecuta desde DOS.
+  ejecuta desde DOS; la guía de
+  [MS-DOS 6.22]({{ '/msdos-622-virtualbox/' | relative_url }}) cubre ese paso.
 - **La imagen de instalación de Windows 3.1.** La que uso en el video:
   [Internet Archive, Windows 3.1](https://archive.org/details/disk-1_202211).
 

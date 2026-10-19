@@ -1,7 +1,7 @@
 ---
 title: "Cómo instalar Windows 95 en VirtualBox, paso a paso"
 description: "Instalación de Windows 95 desde cero en VirtualBox: configuración de la máquina virtual, disquete de arranque, particionado y el parche para procesadores modernos."
-date: 2026-04-07 10:00:00 -0600
+date: 2026-04-07 11:00:00 -0600
 pillar: soporte
 youtube: p8FU7W_AOGI
 image: /assets/img/posts/windows-95-virtualbox.jpg
@@ -92,5 +92,6 @@ Con el parche aplicado, Windows 95 arranca normalmente en VirtualBox y queda
 listo para usarse.
 
 Este video es parte de la serie de instalación de sistemas operativos en
-VirtualBox. Las instalaciones de MS-DOS 6.22 y Windows 3.1 tendrán su
-propia guía aquí mismo.
+VirtualBox. Las guías anteriores cubren
+[MS-DOS 6.22]({{ '/msdos-622-virtualbox/' | relative_url }}) y
+[Windows 3.1]({{ '/windows-31-virtualbox/' | relative_url }}).
