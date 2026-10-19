@@ -1,0 +1,21 @@
+/* Identidad compartida con el blog (assets/css/main.css). */
+@font-face { font-family: 'Fraunces'; font-weight: 500; src: url('../assets/fonts/fraunces-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Fraunces'; font-weight: 600; src: url('../assets/fonts/fraunces-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Mono'; font-weight: 400; src: url('../assets/fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Mono'; font-weight: 500; src: url('../assets/fonts/ibm-plex-mono-latin-500-normal.woff2') format('woff2'); }
+:root {
+  --bg: #121212; --panel: #1A1A18; --text: #F5F0E8; --text-muted: #9C9689;
+  --accent: #C9A24B; --accent2: #3FA089; --line: #2E2E2A;
+  --serif: 'Fraunces', Georgia, serif; --mono: 'IBM Plex Mono', monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow: hidden; }
+body { background: var(--bg); color: var(--text); font-family: var(--mono); -webkit-font-smoothing: antialiased; }
+.monogram {
+  border: 2px solid var(--accent); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-weight: 500; color: var(--accent); letter-spacing: 0.02em;
+}
+.tone-emerald { --tone: var(--accent2); }
+.tone-gold { --tone: var(--accent); }
+.tone-cream { --tone: var(--text); }

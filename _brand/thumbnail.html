@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- Miniatura de YouTube y portada del post: 1280 × 720.
+     Parámetros: ?title=...&pillar=ciberseguridad|soporte|proyectos&kicker=texto opcional -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+body { width: 1280px; height: 720px; position: relative; padding: 76px 96px;
+  display: flex; flex-direction: column;
+  background: radial-gradient(ellipse 1000px 640px at 25% 0%, #26241D 0%, var(--bg) 65%); }
+body::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 14px; background: var(--tone); }
+.top { display: flex; align-items: center; justify-content: space-between; }
+.pillar { font-size: 26px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--tone); border: 2px solid var(--tone); border-radius: 999px; padding: 8px 26px; }
+.monogram { width: 96px; height: 96px; font-size: 36px; }
+.main { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.kicker { font-size: 28px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 22px; }
+.title { font-family: var(--serif); font-weight: 600; line-height: 1.06; letter-spacing: -0.01em; font-size: 104px; max-width: 1060px; }
+.foot { font-size: 24px; letter-spacing: 0.06em; color: var(--text-muted); }
+.foot b { color: var(--accent); font-weight: 500; }
+</style></head><body>
+<div class="top"><span class="pillar" id="pillar"></span><div class="monogram">FC</div></div>
+<div class="main"><div class="kicker" id="kicker" hidden></div><div class="title" id="title"></div></div>
+<div class="foot"><b>cortescalderon.com</b>/blog</div>
+<script>
+  const P = { ciberseguridad: ['Ciberseguridad', 'emerald'], soporte: ['Soporte', 'gold'], proyectos: ['Proyectos', 'cream'] };
+  const q = new URLSearchParams(location.search);
+  const [name, tone] = P[q.get('pillar')] || P.ciberseguridad;
+  document.body.classList.add('tone-' + tone);
+  document.getElementById('pillar').textContent = name;
+  const t = document.getElementById('title');
+  t.textContent = q.get('title') || 'Título del video';
+  if (q.get('kicker')) { const k = document.getElementById('kicker'); k.textContent = q.get('kicker'); k.hidden = false; }
+  // Ajusta el tamaño para que el título quepa en un máximo de 3 líneas.
+  document.fonts.ready.then(() => {
+    let size = 104;
+    while (size > 56 && t.getBoundingClientRect().height > size * 1.06 * 3 + 2) { size -= 4; t.style.fontSize = size + 'px'; }
+    document.body.dataset.ready = '1';
+  });
+</script>
+</body></html>
