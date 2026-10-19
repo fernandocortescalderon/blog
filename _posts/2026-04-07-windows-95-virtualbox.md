@@ -18,11 +18,16 @@ paso, incluidos esos errores y cómo resolverlos.
 ## Lo que necesitas
 
 - **VirtualBox** instalado.
-- **Una imagen ISO de Windows 95.**
+- **Una imagen ISO de Windows 95.** La que uso en el video:
+  [WinWorld, Windows 95](https://winworldpc.com/download/df61214c-cca9-11e7-a73f-fa163e9022f0).
 - **Un disquete de arranque** (imagen `.img`) con controladores de CD-ROM,
-  porque el CD de Windows 95 no es arrancable.
+  porque el CD de Windows 95 no es arrancable:
+  [WinWorld, disquete de arranque](https://winworldpc.com/download/db57f85a-f039-11e7-a562-fa163e9022f0).
 - **El parche para procesadores rápidos** (FIX95CPU), necesario en equipos
-  actuales.
+  actuales: [FIX95CPU](https://lonecrusader.x10host.com/fix95cpu.html).
+
+> Windows 95 sigue siendo software de Microsoft. WinWorld es un archivo de
+> software antiguo; los enlaces se incluyen con fines educativos.
 
 ## 1. Crear la máquina virtual
 
